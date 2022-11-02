@@ -54,8 +54,9 @@ while True:
             logger1.log(str(num1) + " * " + str(num2) + " = " +  str(cf.multiply(num1, num2)))
         
         elif choice == '4':
-            if num == 0:
-                ("Can't divide")
+            result = cf.divide(num1, num2)
+            if result is None:
+                logger2.log("divide by zero error")
             else:
                 logger1.log(str(num1) + " / " + str(num2) + " = " + str(cf.divide(num1, num2)))
 
@@ -63,3 +64,4 @@ while True:
             break
     else:
         print("Invalid Input")
+        logger2.log("input is out of range")
