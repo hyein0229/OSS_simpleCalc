@@ -1,8 +1,9 @@
 # Program make a simple calculator
 
+from logger import Logger
 import calcFunction as cf
 
-def isContinued():
+def isContinued(): 
 
     continued = None  # 진행 여부에 대한 변수
     while True: 
@@ -23,6 +24,11 @@ def isContinued():
     return continued
 
 
+logger1 = Logger("normal routine logger", "calc.log", 1)
+logger2 = Logger("abnormal routine logger", "error.log", 2)
+logger1.get_stream()
+
+# 선택 가능한 연산기능
 print("Select operation.")
 print("1.Add")
 print("2.Subtract")
@@ -39,19 +45,19 @@ while True:
         num2 = float(input("Enter second number: "))
 
         if choice == '1':
-            print(num1, "+", num2, "=", cf.add(num1, num2))
+            logger1.log(str(num1) + " + " + str(num2) + " = " + str(cf.add(num1, num2)))
 
         elif choice == '2':
-            print(num1, "-", num2, "=", cf.subtract(num1, num2))
+            logger1.log(str(num1) + " - " + str(num2) + " = " + str(cf.subtract(num1, num2)))
 
         elif choice == '3':
-            print(num1, "*", num2, "=", cf.multiply(num1, num2))
+            logger1.log(str(num1) + " * " + str(num2) + " = " +  str(cf.multiply(num1, num2)))
         
         elif choice == '4':
-            if num2 == 0:
-                print("Can't divide")
+            if num == 0:
+                ("Can't divide")
             else:
-                print(num1, "/", num2, "=", cf.divide(num1, num2))
+                logger1.log(str(num1) + " / " + str(num2) + " = " + str(cf.divide(num1, num2)))
 
         if not isContinued():  # 종료 여부를 결정할 함수, False 가 리턴되면 계산기 종료 
             break
