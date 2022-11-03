@@ -58,7 +58,7 @@ while True:
             if result is None:
                 logger2.log("divide by zero error")
             else:
-                logger1.log(str(num1) + " / " + str(num2) + " = " + str(cf.divide(num1, num2)))
+                logger1.log(f'{num1} / {num2} = {cf.divide(num1, num2) : .2f}')
 
         if not isContinued():  # 종료 여부를 결정할 함수, False 가 리턴되면 계산기 종료 
             break
