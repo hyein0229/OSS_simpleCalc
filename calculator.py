@@ -1,7 +1,7 @@
 # Program make a simple calculator
 
-from logger import Logger
-import calcFunction as cf
+from logger import Logger   # log 기록할 클래스 가져옴
+import calcFunction as cf   # 연산 함수 가져옴
 
 def isContinued(): 
 
@@ -11,7 +11,7 @@ def isContinued():
         if next_calculation == "yes":  # 계속 진행
             continued = True
         elif next_calculation == "no":
-            reply = input("Are you sure? (yes/no)").lower()  # 재확인
+            reply = input("Are you sure? (yes/no): ").lower()  # 재확인
             if reply == "yes":  # 다음 연산 진행 하지 않음
                 continued = False  # 진행하지 않으므로 False 로 변경
             elif reply == "no":  # 계속 진행
